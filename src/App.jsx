@@ -32,7 +32,7 @@ function App() {
                   muted
                   loop
                 >
-                    <source src="../images/inernat-video.mp4" type="video/mp4" />
+                    <source src="/images/inernat-video.mp4" type="video/mp4" />
             </Video>
         )}
         {isShowStory && (

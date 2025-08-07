@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     min-height: 100vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/room.png");
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/room.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

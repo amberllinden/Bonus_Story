@@ -47,7 +47,7 @@ function WelcomeScreen(props) {
 const Wrapper = styled.div`
     min-height: 100vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/internat.png");
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("./images/internat.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -34,7 +34,7 @@ const TextContaiener = styled.div`
 const Text = styled.p`
     color: #272d30;
     font-style: ${props => (props.italic ? `italic` : `normal`)};
-    font-weight: 200;
+    font-weight: 300;
     text-indent: 20px;
     margin: 0;
     padding: .25em;

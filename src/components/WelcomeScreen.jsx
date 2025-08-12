@@ -17,20 +17,29 @@ function WelcomeScreen(props) {
         }
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            checkPassword()
+        }
+  };
+
     return (
         <Wrapper>
           <Title>Добро пожаловать в Интернат, видящий!</Title>
           <FormWrapper>
               <InputWrapper>
                   <Input
+                      name='pass-word'
                       type='text'
                       placeholder='Введи пароль'
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       onFocus={() => setPasswordError(false)}
+                      onKeyDown={(e) => handleKeyDown(e)}
                   />
                   <Button 
                       type="button"
+                      title='Нажми меня'
                       onClick={checkPassword}
                   >
                       <img src='./images/ghost.svg' width="45px" height="45px"/>

@@ -8,7 +8,7 @@ function WelcomeScreen(props) {
     
 
     const checkPassword = () => {
-        const isRightPassword = password === "123" // &BXW@=|a,^Q9
+        const isRightPassword = password === "&BXW@=|a,^Q9"
 
         if (isRightPassword) {
             clickGhost();

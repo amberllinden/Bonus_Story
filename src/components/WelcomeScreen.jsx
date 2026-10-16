@@ -1,54 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-function WelcomeScreen(props) {
-    const { clickGhost } = props;
-    const [password, setPassword] = useState('');
-    const [passwordError, setPasswordError] = useState(false);
-    
-
-    const checkPassword = () => {
-        const isRightPassword = password === "&BXW@=|a,^Q9"
-
-        if (isRightPassword) {
-            clickGhost();
-        } else {
-            setPasswordError(true);
-        }
-    };
-
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            checkPassword()
-        }
-  };
+function WelcomeScreen() {
 
     return (
         <Wrapper>
-          <Title>Добро пожаловать в Интернат, видящий!</Title>
-          <FormWrapper>
-              <InputWrapper>
-                  <Input
-                      name='pass-word'
-                      type='text'
-                      placeholder='Введи пароль'
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      onFocus={() => setPasswordError(false)}
-                      onKeyDown={(e) => handleKeyDown(e)}
-                  />
+          <Title>Дорогие читатели! Рассказ переехал на мой личный сайт! Нажмите на призрачка, чтобы перейти к нему.</Title>
+          <MessageWrapper>
+              <Message>
                   <Button 
-                      type="button"
                       title='Нажми меня'
-                      onClick={checkPassword}
+                      href='https://stasya-mel.ru/ukazi-mne-put/bonus-story'
                   >
                       <img src='./images/ghost.svg' width="45px" height="45px"/>
                   </Button>
-                  </InputWrapper>
-              {passwordError && (
-                  <ErrorContainer>В пароле ошибка, попробуй еще раз</ErrorContainer>
-              )}
-          </FormWrapper>
+                  </Message>
+          </MessageWrapper>
         </Wrapper>
     );
 }
@@ -73,21 +40,7 @@ const Title = styled.h1`
     text-align: center;
 `;
 
-const Input = styled.input`
-    color: #2b251d;
-	font-size: .75em;
-    font-family: "Roboto Condensed", sans-serif;
-	padding: .5em;
-	border: 1px solid #544028;
-	background: #bebb97;
-	border-radius: 8px;
-
-    &:focus {
-        outline: none;
-    }
-`;
-
-const FormWrapper = styled.div`
+const MessageWrapper = styled.div`
     position: relative;
     width: 100%;
     display: flex;
@@ -96,31 +49,19 @@ const FormWrapper = styled.div`
     justify-content: center;
 `
 
-const InputWrapper = styled.div`
+const Message = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
 `
 
-const Button = styled.button`
+const Button = styled.a`
     background-color: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
     overflow: hidden;
     margin: 1rem;
-`
-
-const ErrorContainer = styled.p`
-    position: absolute;
-    display: block;
-    color: #1c1207;
-    bottom: 50%;
-    left: 60%;
-    background: #e4d5c3;
-    padding: 1rem;
-    border: 1px solid #1c1207;
-    border-radius: 16px;
 `
 
 export default WelcomeScreen;
